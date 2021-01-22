@@ -1,0 +1,13 @@
+<!-- rostopic pub -1 /move_base_simple/goal geometry_msgs/PoseStamped "header: -->
+<launch>
+
+	<include file = "$(find serving_robot_v6)/launch/serving_robot_gazebo.launch"/>
+
+	<!-- Load Map -->
+	<node name = "map_server" pkg = "map_server" type = "map_server" args = "$(find serving_robot_v6)/maps/final.yaml"/>
+
+	<include file="$(find serving_robot_v6)/launch/amcl.launch"/>
+	<include file="$(find serving_robot_v6)/launch/move_base.launch"/>
+	<include file="$(find darknet_ros)/launch/yolo_v3.launch"/>
+
+</launch>

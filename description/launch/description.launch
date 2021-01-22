@@ -1,0 +1,5 @@
+<launch>
+
+	<param name="robot_description" command="$(find xacro)/xacro --inorder '$(find serving_robot_v6)/description/urdf/serving_robot_v6.xacro' use_nominal_extrinsics:=true"/>
+
+</launch>
